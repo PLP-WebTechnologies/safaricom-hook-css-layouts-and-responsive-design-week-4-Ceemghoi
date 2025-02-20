@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease-in-out;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header Styles with Flexbox */
+        header {
+            background-color: #333;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 0.8;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        /* Main Content with Grid */
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            min-height: calc(100vh - 160px);
+        }
+
+        .content {
+            padding: 1rem;
+        }
+
+        .image-section {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ddd;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .content, .image-section {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @media screen and (min-width: 601px) and (max-width: 1024px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                animation: slideIn 0.5s ease-out;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .content {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .image-section {
+            animation: slideIn 0.5s ease-out 0.2s backwards;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\cassie\PLP ASSIGNMENT\safaricom-hook-css-layouts-and-responsive-design-week-4-Ceemghoi\My Calorie Logo.png" alt="Logo img" width="200" height="150">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content">
+            <h1>Welcome to Our  Calorie Tracking Website</h1>
+            <p>We help you to track your daily calorie intake which in turn helps you achieve your daily calorie goals</p>
+            <p> Calorie tracking is very essential in a person's fitness journey,whether you are aiming to gain or lose weight.</p>
+        </div>
+        <div class="image-section">
+            <img src="C:\Users\cassie\PLP ASSIGNMENT\safaricom-hook-css-layouts-and-responsive-design-week-4-Ceemghoi\calorie tracking 2.jpeg">
+        </div>
+    </main>
+
+    <footer>
+        <div class="copyright">
+            © 2025 Calorie Tracker. All rights reserved.
+        </div>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+</body>
+</html>
